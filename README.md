@@ -1,14 +1,21 @@
-# Angular Docker
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli).
+# Dockerized Angular 4 App (with Angular CLI)
 
-## Scripts
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-| Script       | Description                                  | Example                             |
-| ------------ | -------------------------------------------- | ----------------------------------- |
-| start        | start the application                        | `yarn start` or `yarn start --open` |
-| build        | built application for production             | `yarn build`                        |
-| build:docker | build docker image                           | `yarn build:docker`                 |
-| start:docker | start the prebuilt docker image on port 3000 | `yarn start:docker`                 |
-| test         | run unit tests in watch mode                 | `yarn test`                         |
-| test:ci      | run unit tests for CI/CD environment         | `yarn test:ci`                      |
+## Build docker image
+
+```
+$ docker build -t myapp . 
+```
+
+## Run the container
+
+```
+$ docker run -d -p 8080:80 myapp
+```
+
+
+The app will be available at http://localhost:8080
+
+You can easily tweak the nginx config in ```nginx/default.conf```
